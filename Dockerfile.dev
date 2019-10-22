@@ -1,0 +1,20 @@
+#install docker image in the container
+FROM node:lts-alpine
+
+#set working directory
+WORKDIR '/usr/app'
+
+#copy 'package.json file as a pre-build step'
+COPY package.json .
+
+#run npm install to get all the dependecies
+RUN npm install
+
+#copy remaining files and pages
+COPY . .
+
+#build and run react JS app
+CMD ["npm", "run", "start"]
+
+
+
