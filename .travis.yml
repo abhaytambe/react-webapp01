@@ -14,3 +14,17 @@ cache:
 script:
   - docker run -e CI=true atambe/react-webapp01 npm run test -- --coverage
   - npm run build
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "react-webapp01"
+  env: "ReactWebapp01-env"
+  bucket_name: "elasticbeanstalk-us-east-1-571631755509"
+  bucket_path: "react-webapp01"
+  on:
+    branch: master
+  access_key_id:
+    secure: "$access_key_id"
+  secret_access_key:
+    secure: "$secret_access_key"
