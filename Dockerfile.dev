@@ -11,7 +11,7 @@ COPY package.json .
 RUN npm install
 
 #copy remaining files and pages
-COPY . .
+#COPY . .
 
 #build and run react JS app
 CMD ["npm", "run", "start"]
