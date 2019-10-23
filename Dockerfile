@@ -18,6 +18,6 @@ COPY . .
 #run build
 RUN npm run build
 
-FROM ngnix
+FROM nginx as Deploy_Phase
 EXPOSE 80
 COPY --from=Builder_Phase /usr/app/build /usr/share/ngnix
