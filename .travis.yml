@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t atambe/react-webapp01 -f Dockerfile .
+  - docker build -t atambe/react-webapp01 -f Dockerfile.dev .
 
 language: node_js
 node_js:
